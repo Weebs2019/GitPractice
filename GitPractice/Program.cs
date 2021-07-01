@@ -5,13 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace GetNameOfFiles
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            string[] fileArray = Directory.GetFiles(@"C:\Users\swibowi\Documents\");
+            Console.WriteLine("Enter Path");
+            Console.WriteLine("Day times kids");
+            var dirPath = @"" + Console.ReadLine();
+
+            if (Directory.Exists(dirPath))
+            {
+                var path = new DirectoryInfo(dirPath);
+                var files = path.GetFiles();
+            }
+            string[] fileArray = Directory.GetFiles(dirPath);
             for (int i = 0; i < fileArray.Length; i++)
             {
 
